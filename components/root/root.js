@@ -1,4 +1,5 @@
-import Seo from "./root"
+import Seo from "./seo"
+
 
 const Root = (props) => {
     return (
