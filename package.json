@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "firebase": "^8.2.0",
+    "firebase-admin": "^9.4.2",
     "next": "10.0.3",
     "next-pwa": "^5.0.0",
+    "nookies": "^2.5.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   }
