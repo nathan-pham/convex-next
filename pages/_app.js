@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+import "../css/globals.css"
+import "../css/login.css"
 
 function Convex({ Component, pageProps }) {
   return <Component {...pageProps} />
