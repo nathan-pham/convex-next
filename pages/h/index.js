@@ -1,11 +1,21 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
 
 import Root from "../../components/root/root"
 import query from "../../js/query"
 
 const Home = (props) => {
+    const router = useRouter()
     const [ user, setUser ] = useState({ })
-    query("u/verify").then(setUser)
+
+    query("u/claims").then(details => {
+        if(details.hasOwnProperty("error") && process.browser) {
+            router.push("/")
+            return
+        }
+
+        setUser(details)
+    })
 
     return (
         <Root title="Home">

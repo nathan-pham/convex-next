@@ -1,5 +1,6 @@
-const query = (url, body) => {
-	return fetch(`/api/${url}`, {
+const query = (url, body, abs) => {
+    
+	return fetch(abs || `/api/${url}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"

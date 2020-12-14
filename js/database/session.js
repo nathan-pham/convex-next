@@ -8,7 +8,6 @@ const create = (idToken, expiresIn) => {
 	return admin.auth().createSessionCookie(idToken, { expiresIn })
 }
 
-
 const logout = async (req, res) => {
     const cookie = req.cookies["convex-next"]
 
