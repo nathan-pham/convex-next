@@ -1,19 +1,19 @@
 import { admin } from "./index"
 
 const verify = async (session) => {
-	return admin.auth().verifySessionCookie(session, true)
+	return admin.auth().verifySessionCookie(session, true);
 }
 
 const create = (idToken, expiresIn) => {
-	return admin.auth().createSessionCookie(idToken, { expiresIn })
+	return admin.auth().createSessionCookie(idToken, { expiresIn });
 }
 
-const logout = async (req, res) => {
-    const cookie = req.cookies["convex-next"]
+const logout = async (req) => {
+    const cookie = req.cookies["convex-next"];
 
 	try {
-		const claims = await verify(cookie)
-		await admin.auth().revokeRefreshTokens(claims.sub)
+		const claims = await verify(cookie);
+		await admin.auth().revokeRefreshTokens(claims.sub);
 	}
 	catch(e) {
         
